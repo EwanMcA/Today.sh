@@ -35,8 +35,14 @@ def filter_tags(additions):
 
 
 def write_tags(additions):
+    # if file doesn't exist yet, add a heading
     for tag in additions:
         with open(f"{tag}.md", 'a+') as f:
+            if f.read() == '':
+                f.write(f"# {tag}\n\n")
+
+    for tag in additions:
+        with open(f"{tag}.md", 'a') as f:
             for add in additions[tag]:
                 f.write(add)
 
