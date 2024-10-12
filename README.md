@@ -16,4 +16,20 @@ today.sh
 [CODE] Made some important changes to my note-taking app.
 ```
 
-- On save these will be copied to tags files if configured to do so.
+- run `parse.py` and these will be copied to tags files if configured to do so.
+
+## Configuration
+
+`config.py`
+```json
+{
+    "tags": ["TODO"], // anything listed here will be copied to a tags file
+}
+```
+
+## Nvim
+
+- to run parse on save, add this to your vim config:
+```vim
+vim.api.nvim_command("autocmd BufWritePost *.md :!python ./path/to/parse.py %")
+```
