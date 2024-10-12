@@ -61,6 +61,7 @@ def write_log(dir, additions):
             for add in additions[tag]:
                 f.write(add)
 
+
 def main(fn):
     dir = os.environ.get("TODAY_DIR")
     if not dir:
